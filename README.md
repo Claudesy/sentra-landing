@@ -1,7 +1,7 @@
 </div>
 <div align="center">
 
-<img src="public/hero.jpg" alt="Sentra AI — PKM Dashboard" width="100%" style="border-radius:12px;" />
+<img src="public/hero.jpg" alt="Sentra HAI — PKM Dashboard" width="100%" style="border-radius:12px;" />
 
 # ✦ Sentra AI
 
