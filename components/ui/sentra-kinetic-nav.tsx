@@ -15,9 +15,9 @@ interface SentraKineticNavProps {
 // --- Menu Items ---
 const menuItems = [
   { label: "About", href: "#about", shape: "1" },
-  { label: "Service", href: "#services", shape: "2" },
-  { label: "Blog", href: "#insights", shape: "3" },
-  { label: "Contact us", href: "#contact", shape: "4" },
+  { label: "Services", href: "#services", shape: "2" },
+  { label: "Audrey", href: "#audrey", shape: "3" },
+  { label: "Insights", href: "#insights", shape: "4" },
 ];
 
 // --- Main Component ---

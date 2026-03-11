@@ -10,9 +10,9 @@ import { SentraKineticNav } from "@/components/ui/sentra-kinetic-nav";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "#about" },
-  { name: "Service", href: "#services" },
+  { name: "Services", href: "#services" },
+  { name: "Audrey", href: "#audrey" },
   { name: "Insights", href: "#insights" },
-  { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {

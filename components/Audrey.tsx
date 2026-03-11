@@ -314,6 +314,7 @@ export default function Audrey() {
 
   return (
     <section
+      id="audrey"
       ref={sectionRef}
       className="relative py-32 border-b border-muted/20 overflow-hidden"
     >

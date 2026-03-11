@@ -8,7 +8,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function CTA() {
   return (
-    <section className="relative min-h-[600px] flex items-center overflow-hidden border-b border-muted/20">
+    <section id="contact" className="relative min-h-[600px] flex items-center overflow-hidden border-b border-muted/20">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 

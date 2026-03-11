@@ -48,7 +48,7 @@ export default function Services() {
   const [activeId, setActiveId] = useState("01");
 
   return (
-    <section className="py-24 border-b border-muted/20">
+    <section id="services" className="py-24 border-b border-muted/20">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="grid lg:grid-cols-2 gap-12 mb-20">

@@ -27,7 +27,7 @@ const news = [
 
 export default function News() {
   return (
-    <section className="py-24 border-b border-muted/20">
+    <section id="insights" className="py-24 border-b border-muted/20">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
           <div className="flex flex-col gap-6">

@@ -47,10 +47,16 @@ export default function Footer() {
 
           {/* Links 2 */}
           <div className="flex flex-col gap-4">
-            {/* [REQUIRES VERIFICATION] */}
-            {["Home", "About", "Services", "Portfolio", "Insights", "Contact"].map((link) => (
-              <Link key={link} href="/" className="text-sm text-muted hover:text-accent transition-colors">
-                {link}
+            {[
+              { name: "Home", href: "/" },
+              { name: "About", href: "#about" },
+              { name: "Services", href: "#services" },
+              { name: "Audrey", href: "#audrey" },
+              { name: "Insights", href: "#insights" },
+              { name: "Contact", href: "#contact" },
+            ].map((link) => (
+              <Link key={link.name} href={link.href} className="text-sm text-muted hover:text-accent transition-colors">
+                {link.name}
               </Link>
             ))}
           </div>
