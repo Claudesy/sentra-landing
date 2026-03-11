@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="public/hero.jpg" alt="Sentra AI — Intelligent Healthcare Infrastructure" width="100%" style="border-radius:12px;" />
+<img src="public/gt.png" alt="Sentra AI — Intelligent Healthcare Infrastructure" width="100%" style="border-radius:12px;" />
 
 # Sentra Artificial Intelligence
 
