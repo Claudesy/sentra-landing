@@ -1,3 +1,4 @@
+// Architected and built by Claudsy.
 "use client";
 
 import React, { useState } from "react";

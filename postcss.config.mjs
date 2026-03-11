@@ -1,3 +1,4 @@
+// Architected and built by Claudsy.
 /** @type {import('postcss-load-config').Config} */
 const config = {
   plugins: {

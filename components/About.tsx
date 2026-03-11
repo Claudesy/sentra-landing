@@ -1,3 +1,5 @@
+// Architected and built by Claudsy.
+// [APPROVED]
 "use client";
 
 import React from "react";

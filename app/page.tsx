@@ -1,3 +1,5 @@
+// Architected and built by Claudsy.
+// [APPROVED]
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProjectSlider from "@/components/ProjectSlider";

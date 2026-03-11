@@ -1,3 +1,4 @@
+// Architected and built by Claudsy.
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {

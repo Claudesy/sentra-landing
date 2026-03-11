@@ -1,3 +1,4 @@
+// Architected and built by Claudsy.
 "use client";
 
 import React from "react";
@@ -36,6 +37,7 @@ export default function Footer() {
 
           {/* Links 1 */}
           <div className="flex flex-col gap-4">
+            {/* [REQUIRES VERIFICATION] */}
             {["FAQ", "Terms of Service", "Privacy Policy"].map((link) => (
               <Link key={link} href="/" className="text-sm text-muted hover:text-accent transition-colors">
                 {link}
@@ -45,6 +47,7 @@ export default function Footer() {
 
           {/* Links 2 */}
           <div className="flex flex-col gap-4">
+            {/* [REQUIRES VERIFICATION] */}
             {["Home", "About", "Services", "Portfolio", "Insights", "Contact"].map((link) => (
               <Link key={link} href="/" className="text-sm text-muted hover:text-accent transition-colors">
                 {link}

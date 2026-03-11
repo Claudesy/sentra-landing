@@ -1,3 +1,4 @@
+// Architected and built by Claudsy.
 "use client";
 
 import React from "react";
@@ -143,7 +144,7 @@ export default function Hero() {
             <div className="flex flex-col md:flex-row gap-8 md:gap-16">
               {[
                 { id: "01", text: "Patient Safety Net Real-Time" },
-                { id: "02", text: "Specializing in brand strategy and direction" },
+                { id: "02", text: "Specializing in clinical intelligence and decision support" },
                 { id: "03", text: "Immutable Audit Trail + Human Authority" },
               ].map((point) => (
                 <div key={point.id} className="flex flex-col gap-2">
