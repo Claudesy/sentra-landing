@@ -2,9 +2,9 @@
 
 <img src="public/hero.jpg" alt="Sentra AI — PKM Dashboard" width="100%" style="border-radius:12px;" />
 
-# ✦ Sentra AI
+# ✦ Sentra Healthcare Artificial Intelligence
 
-### *Intelligent Healthcare Infrastructure for Indonesian Puskesmas*
+### *Intelligent Healthcare Infrastructure for Indonesian Healthcare*
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.1-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)](https://react.dev/)
@@ -917,7 +917,8 @@ Distributed under the **ISC License**. See [`LICENSE`](./LICENSE) for full text.
 
 <br/>
 
-*Architected and built by the one and only Claudesy.*
+*Architected and built by the one and only Claudesy.
+For better future to my Al, Ai, Au*
 
 <br/>
 
