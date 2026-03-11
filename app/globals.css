@@ -1,42 +1,58 @@
-/* Architected and built by Claudesy. */
+/* Sentra Healthcare AI — Design System */
 @import "tailwindcss";
 
 @theme {
-  --color-background: var(--token-f7b59e26-9f72-448e-a686-7cef534c1d1b);
-  --color-foreground: var(--token-8074f123-6125-4b34-a511-5267d51f2532);
-  --color-accent: var(--token-6cc28e6e-cf32-48d6-889a-7fddcd536c2e);
-  --color-muted: var(--token-fd62793d-9fcb-4bbe-9f34-a2204ddd7183);
+  --color-background: var(--sentra-bg);
+  --color-foreground: var(--sentra-fg);
+  --color-accent: var(--sentra-accent);
+  --color-muted: var(--sentra-muted-text);
 
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
   --font-inter: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --token-f7b59e26-9f72-448e-a686-7cef534c1d1b: #0d0d0d;
-  --token-8074f123-6125-4b34-a511-5267d51f2532: #b7ab98;
-  --token-b8a29472-3a70-469c-a591-10b3391e800d: #b8ac9980;
-  --token-fd62793d-9fcb-4bbe-9f34-a2204ddd7183: #b8ac99cc;
-  --token-6cc28e6e-cf32-48d6-889a-7fddcd536c2e: #eb5939;
-  --token-70feb264-5a03-4ed6-bce3-f536019e49bf: #fff;
-  --token-12d8aa78-4473-47d9-b747-c1b2e85e37a5: #b8ac991a;
-  --token-fd85da27-6b51-40c1-9b45-fd5ee5782548: #b8ac9933;
+  /* ── Core Palette ── */
+  --sentra-bg: #0d0d0d;
+  --sentra-fg: #b7ab98;
+  --sentra-accent: #eb5939;
+  --sentra-white: #fff;
 
-  /* Sentra Sim Section Variables */
-  --sdx-bg-canvas: #1C1B1A;
-  --sdx-bg-page: #0d0d0d;
-  --sdx-text-main: #b7ab98;
-  --sdx-text-muted: #b8ac99cc;
-  --sdx-line-base: #b8ac9940;
+  /* ── Muted Scale ── */
+  --sentra-muted: #b8ac99;
+  --sentra-muted-text: #b8ac99cc;       /* 80% — primary muted text */
+  --sentra-muted-half: #b8ac9980;       /* 50% */
+  --sentra-muted-subtle: #b8ac9933;     /* 20% */
+  --sentra-muted-faint: #b8ac991a;      /* 10% */
+  --sentra-muted-line: #b8ac9940;       /* 25% — grid lines */
+
+  /* ── Canvas (elevated surfaces) ── */
+  --sentra-canvas: #1C1B1A;
+
+  /* ── Semantic ── */
+  --sentra-critical: #E65A4C;
+  --sentra-warning: #FBBF24;
+
+  /* ── Audrey AI ── */
+  --sentra-audrey: #C4956A;
+  --sentra-audrey-teal: #6B9B8A;
+
+  /* ── SentraSim Section ── */
+  --sdx-bg-canvas: var(--sentra-canvas);
+  --sdx-bg-page: var(--sentra-bg);
+  --sdx-text-main: var(--sentra-fg);
+  --sdx-text-muted: var(--sentra-muted-text);
+  --sdx-line-base: var(--sentra-muted-line);
   --sdx-grid-faint: rgba(184, 172, 153, 0.03);
-  --sdx-c-anamnesa: #b8ac99cc;
-  --sdx-c-asesmen: #eb5939;
-  --sdx-c-critical: #E65A4C;
-  --sdx-c-warning: #FBBF24;
+  --sdx-c-anamnesa: var(--sentra-muted-text);
+  --sdx-c-asesmen: var(--sentra-accent);
+  --sdx-c-critical: var(--sentra-critical);
+  --sdx-c-warning: var(--sentra-warning);
 }
 
 body {
-  background: var(--token-f7b59e26-9f72-448e-a686-7cef534c1d1b);
-  color: var(--token-8074f123-6125-4b34-a511-5267d51f2532);
+  background: var(--sentra-bg);
+  color: var(--sentra-fg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -73,5 +89,3 @@ body {
 .animate-marquee {
   animation: marquee 40s linear infinite;
 }
-
-/* Kinetic Nav — all styling via Tailwind utilities in component */
