@@ -1,7 +1,8 @@
 // Architected and built by Claudesy.
 "use client";
 
-import React from "react";
+import React, { useId } from "react";
+import Image from "next/image";
 
 function OpenAILogo({ className }: { className?: string }) {
   return (
@@ -20,12 +21,14 @@ function AnthropicLogo({ className }: { className?: string }) {
 }
 
 function NextJSLogo({ className }: { className?: string }) {
+  const maskId = useId();
+
   return (
     <svg viewBox="0 0 180 180" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
-      <mask id="nextmask" style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
+      <mask id={maskId} style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
         <circle cx="90" cy="90" r="90" fill="black" />
       </mask>
-      <g mask="url(#nextmask)">
+      <g mask={`url(#${maskId})`}>
         <circle cx="90" cy="90" r="90" fill="currentColor" />
         <path d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z" fill="var(--color-background)" />
         <rect x="115" y="54" width="12" height="72" fill="var(--color-background)" />
@@ -91,17 +94,61 @@ function MemphisLogo({ className }: { className?: string }) {
   );
 }
 
+function ReactLogo({ className }: { className?: string }) {
+  void className;
+  return (
+    <svg viewBox="0 0 841.9 595.3" className="w-12 h-10 shrink-0 overflow-visible" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path d="M666.3 296.5c0-32.5-40.7-63.3-103.1-82.4 14.4-63.6 8-114.2-20.2-130.4-6.5-3.8-14.1-5.6-22.4-5.6v22.3c4.6 0 8.3.9 11.4 2.6 13.6 7.8 19.5 37.5 14.9 75.7-1.1 9.4-2.9 19.3-5.1 29.4-19.6-4.8-41-8.5-63.5-10.9-13.5-18.5-27.5-35.3-41.6-50 32.6-30.3 63.2-46.9 84-46.9V78c-27.5 0-63.5 19.6-99.9 53.6-36.4-33.8-72.4-53.2-99.9-53.2v22.3c20.7 0 51.4 16.5 84 46.6-14 14.7-28 31.4-41.3 49.9-22.6 2.4-44 6.1-63.6 11-2.3-10-4-19.7-5.2-29-4.7-38.2 1.1-67.9 14.6-75.8 3-1.8 6.9-2.6 11.5-2.6V78.5c-8.4 0-16 1.8-22.6 5.6-28.1 16.2-34.4 66.7-19.9 130.1-62.2 19.2-102.7 49.9-102.7 82.3 0 32.5 40.7 63.3 103.1 82.4-14.4 63.6-8 114.2 20.2 130.4 6.5 3.8 14.1 5.6 22.5 5.6 27.5 0 63.5-19.6 99.9-53.6 36.4 33.8 72.4 53.2 99.9 53.2 8.4 0 16-1.8 22.6-5.6 28.1-16.2 34.4-66.7 19.9-130.1 62-19.1 102.5-49.9 102.5-82.3zm-130.2-66.7c-3.7 12.9-8.3 26.2-13.5 39.5-4.1-8-8.4-16-13.1-24-4.6-8-9.5-15.8-14.4-23.4 14.2 2.1 27.9 4.7 41 7.9zm-45.8 106.5c-7.8 13.5-15.8 26.3-24.1 38.2-14.9 1.3-30 2-45.2 2-15.1 0-30.2-.7-45-1.9-8.3-11.9-16.4-24.6-24.2-38-7.6-13.1-14.5-26.4-20.8-39.8 6.2-13.4 13.2-26.8 20.7-39.9 7.8-13.5 15.8-26.3 24.1-38.2 14.9-1.3 30-2 45.2-2 15.1 0 30.2.7 45 1.9 8.3 11.9 16.4 24.6 24.2 38 7.6 13.1 14.5 26.4 20.8 39.8-6.3 13.4-13.2 26.8-20.7 39.9zm32.3-13c5.4 13.4 10 26.8 13.8 39.8-13.1 3.2-26.9 5.9-41.2 8 4.9-7.7 9.8-15.6 14.4-23.7 4.6-8 8.9-16.1 13-24.1zM421.2 430c-9.3-9.6-18.6-20.3-27.8-32 9 .4 18.2.7 27.5.7 9.4 0 18.7-.2 27.8-.7-9 11.7-18.3 22.4-27.5 32zm-74.4-58.9c-14.2-2.1-27.9-4.7-41-7.9 3.7-12.9 8.3-26.2 13.5-39.5 4.1 8 8.4 16 13.1 24 4.7 8 9.5 15.8 14.4 23.4zM420.7 163c9.3 9.6 18.6 20.3 27.8 32-9-.4-18.2-.7-27.5-.7-9.4 0-18.7.2-27.8.7 9-11.7 18.3-22.4 27.5-32zm-74 58.9c-4.9 7.7-9.8 15.6-14.4 23.7-4.6 8-8.9 16-13 24-5.4-13.4-10-26.8-13.8-39.8 13.1-3.1 26.9-5.8 41.2-7.9zm-90.5 125.2c-35.4-15.1-58.3-34.9-58.3-50.6 0-15.7 22.9-35.6 58.3-50.6 8.6-3.7 18-7 27.7-10.1 5.7 19.6 13.2 40 22.5 60.9-9.2 20.8-16.6 41.1-22.2 60.6-9.9-3.1-19.3-6.5-28-10.2zM310 490c-13.6-7.8-19.5-37.5-14.9-75.7 1.1-9.4 2.9-19.3 5.1-29.4 19.6 4.8 41 8.5 63.5 10.9 13.5 18.5 27.5 35.3 41.6 50-32.6 30.3-63.2 46.9-84 46.9-4.5-.1-8.3-1-11.3-2.7zm237.2-76.2c4.7 38.2-1.1 67.9-14.6 75.8-3 1.8-6.9 2.6-11.5 2.6-20.7 0-51.4-16.5-84-46.6 14-14.7 28-31.4 41.3-49.9 22.6-2.4 44-6.1 63.6-11 2.3 10.1 4.1 19.8 5.2 29.1zm38.5-66.7c-8.6 3.7-18 7-27.7 10.1-5.7-19.6-13.2-40-22.5-60.9 9.2-20.8 16.6-41.1 22.2-60.6 9.9 3.1 19.3 6.5 28.1 10.2 35.4 15.1 58.3 34.9 58.3 50.6-.1 15.7-23 35.6-58.4 50.6z"/>
+        <circle cx="420.9" cy="296.5" r="45.7"/>
+      </g>
+    </svg>
+  );
+}
+
+function FramerLogo({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z"/>
+    </svg>
+  );
+}
+
+function VercelLogo({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="m12 1.608 12 20.784H0Z"/>
+    </svg>
+  );
+}
+
+function MONAILogo({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 1.5c4.69 0 8.5 3.81 8.5 8.5s-3.81 8.5-8.5 8.5S3.5 16.69 3.5 12 7.31 3.5 12 3.5zM8 8v8h2V9.5l2 4 2-4V16h2V8h-2l-2 4-2-4H8z"/>
+    </svg>
+  );
+}
+
+function KaggleLogo({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.825 23.859a1.49 1.49 0 0 1-1.063-.453l-6.571-6.964-1.66 1.752v4.96a1.186 1.186 0 0 1-1.184 1.184 1.186 1.186 0 0 1-1.184-1.184V1.846c0-.654.53-1.184 1.184-1.184.654 0 1.184.53 1.184 1.184v11.372l8.27-8.706a1.34 1.34 0 0 1 1.063-.468c.37 0 .726.152.985.42a1.354 1.354 0 0 1 .048 1.846l-5.6 5.886 5.915 6.28a1.354 1.354 0 0 1-.048 1.846 1.34 1.34 0 0 1-.985.42h-.554z"/>
+    </svg>
+  );
+}
+
 function MelindaLogo({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className={className} xmlns="http://www.w3.org/2000/svg">
-      <path d="M8.178 24.8V10.4c0-1.12 0-1.68.218-2.108a2 2 0 0 1 .874-.874C9.698 7.2 10.258 7.2 11.378 7.2h5.333c1.12 0 1.68 0 2.108.218a2 2 0 0 1 .874.874c.218.428.218.988.218 2.108v1.689" />
-      <path d="M8.178 24.8H7.2m17.6 0h-.978m-15.644 0h11.733m0 0V12.089m0 0h2.311c.56 0 .84 0 1.054.109a1 1 0 0 1 .437.437c.109.214.109.494.109 1.054V24.8" />
-      <path d="M14.045 11.111v3.911m-1.956-1.956h3.911" />
-      <circle cx="16" cy="17.956" r=".5" fill="currentColor" stroke="none" />
-      <circle cx="12.089" cy="17.956" r=".5" fill="currentColor" stroke="none" />
-      <circle cx="16" cy="21.373" r=".5" fill="currentColor" stroke="none" />
-      <circle cx="12.089" cy="21.373" r=".5" fill="currentColor" stroke="none" />
-    </svg>
+    <Image
+      src="/melinda2.avif"
+      alt="RSIA Melinda"
+      width={80}
+      height={48}
+      className={className}
+      style={{ width: 80, height: 48, objectFit: "contain", filter: "brightness(0) invert(0.73) sepia(0.15) saturate(0.6)" }}
+      unoptimized
+    />
   );
 }
 
@@ -112,10 +159,15 @@ const partners = [
   { name: "Gemini", Logo: GeminiLogo },
   { name: "Stanford University", Logo: StanfordLogo },
   { name: "Memphis University", Logo: MemphisLogo },
-  { name: "RSIA Melinda", Logo: MelindaLogo },
+  { name: "RSIA Melinda DHAI", Logo: MelindaLogo },
+  { name: "React 19", Logo: ReactLogo },
+  { name: "Framer", Logo: FramerLogo },
+  { name: "Vercel", Logo: VercelLogo },
   { name: "Next.js", Logo: NextJSLogo },
   { name: "Tailwind CSS", Logo: TailwindLogo },
   { name: "HL7 FHIR", Logo: FHIRLogo },
+  { name: "MONAI", Logo: MONAILogo },
+  { name: "Kaggle", Logo: KaggleLogo },
 ];
 
 export default function Clients() {
@@ -123,8 +175,8 @@ export default function Clients() {
     <section className="py-20 border-b border-muted/20 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 mb-12">
         <h2 className="text-2xl md:text-3xl font-medium text-center text-foreground leading-snug max-w-[800px] mx-auto font-jakarta uppercase tracking-tighter">
-          In Collaboration with{" "}
-          <span className="text-accent">Industry Leaders</span>
+          We Built with{" "}
+          <span className="text-accent">the Best in Industry</span>
         </h2>
       </div>
 
@@ -135,7 +187,7 @@ export default function Clients() {
               key={i}
               className="mx-12 flex items-center gap-3 opacity-40 hover:opacity-100 transition-all duration-500 text-foreground shrink-0"
             >
-              <partner.Logo className="w-8 h-8" />
+              <partner.Logo className="w-8 h-8 shrink-0 overflow-visible" />
               <span className="text-sm font-bold tracking-wider uppercase font-jakarta">
                 {partner.name}
               </span>

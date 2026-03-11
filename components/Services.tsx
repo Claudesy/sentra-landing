@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { siteLinks } from "@/lib/site-links";
 
 const services = [
   {
@@ -45,7 +46,7 @@ const services = [
 ];
 
 export default function Services() {
-  const [activeId, setActiveId] = useState("01");
+  const [activeId, setActiveId] = useState<string | null>("01");
 
   return (
     <section id="services" className="py-24 border-b border-muted/20">
@@ -71,15 +72,20 @@ export default function Services() {
             const isActive = activeId === service.id;
 
             return (
-              <motion.div
+              <motion.article
                 key={service.id}
                 layout
-                onClick={() => setActiveId(isActive ? "" : service.id)}
-                className={`cursor-pointer flex flex-col md:flex-row justify-between p-8 border-b border-muted/20 transition-colors duration-500 ${
+                className={`flex flex-col md:flex-row justify-between p-8 border-b border-muted/20 transition-colors duration-500 ${
                   isActive ? "bg-accent" : "hover:bg-muted/5"
                 }`}
               >
-                <div className="flex-1 flex flex-col gap-4">
+                <button
+                  type="button"
+                  aria-controls={`service-panel-${service.id}`}
+                  aria-expanded={isActive}
+                  onClick={() => setActiveId(isActive ? null : service.id)}
+                  className="flex-1 flex flex-col gap-4 text-left"
+                >
                   <div className="flex justify-between items-center">
                     <h3 className={`text-2xl md:text-3xl font-bold font-jakarta transition-colors duration-300 ${
                       isActive ? "text-background" : "text-foreground"
@@ -96,6 +102,7 @@ export default function Services() {
                   <AnimatePresence>
                     {isActive && (
                       <motion.p
+                        id={`service-panel-${service.id}`}
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
@@ -106,12 +113,11 @@ export default function Services() {
                       </motion.p>
                     )}
                   </AnimatePresence>
-                </div>
+                </button>
 
                 <div className="flex items-start justify-end mt-6 md:mt-0 md:pl-12">
                   <Link
-                    href="/contact"
-                    onClick={(e) => e.stopPropagation()}
+                    href={siteLinks.contact}
                     className={`flex items-center gap-2 px-6 py-3 rounded-full border transition-all ${
                       isActive
                         ? "bg-background text-foreground border-transparent hover:scale-105"
@@ -126,7 +132,7 @@ export default function Services() {
                     </div>
                   </Link>
                 </div>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>

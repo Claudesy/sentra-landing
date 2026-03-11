@@ -14,7 +14,7 @@ interface SentraKineticNavProps {
 
 // --- Menu Items ---
 const menuItems = [
-  { label: "About", href: "#about", shape: "1" },
+  { label: "Our Story", href: "/story", shape: "1" },
   { label: "Services", href: "#services", shape: "2" },
   { label: "Audrey", href: "#audrey", shape: "3" },
   { label: "Insights", href: "#insights", shape: "4" },
@@ -319,7 +319,7 @@ export function SentraKineticNav({ isOpen, onClose }: SentraKineticNavProps) {
                   Email
                 </p>
                 <p className="text-sm text-muted m-0">
-                  drferdiiskandar@sentraai.id
+                  drferdiiskandar@melinda.co.id
                 </p>
               </div>
               <div className="flex flex-col gap-0.5 mb-4">
@@ -327,7 +327,7 @@ export function SentraKineticNav({ isOpen, onClose }: SentraKineticNavProps) {
                   Lokasi
                 </p>
                 <p className="text-sm text-muted m-0">
-                  Balowerti II 59, Kediri, Indonesia
+                  Laboratorium Technology RSIA Melinda DHAI, Kediri, Jawa Timur, Indonesia
                 </p>
               </div>
               <div className="h-px bg-foreground/10 my-5" />

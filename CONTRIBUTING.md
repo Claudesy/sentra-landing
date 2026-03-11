@@ -8,7 +8,20 @@ Thank you for your interest in contributing! This guide explains how to particip
 
 ## Code of Conduct
 
-By participating, you agree to abide by our [Code of Conduct](./CODE_OF_CONDUCT.md). Please read it before contributing.
+We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone.
+
+**Examples of positive behaviour:**
+- Demonstrating empathy and kindness toward other people
+- Being respectful of differing opinions, viewpoints, and experiences
+- Giving and gracefully accepting constructive feedback
+- Focusing on what is best for the overall community
+
+**Unacceptable behaviour:**
+- Harassment, trolling, insulting or derogatory comments
+- Publishing others' private information without permission
+- Other conduct considered inappropriate in a professional setting
+
+Instances of unacceptable behaviour may be reported to community leaders. This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1.
 
 ---
 
@@ -40,15 +53,52 @@ npm run build  # Production build (must succeed before PR)
 
 ## Commit Convention
 
-All commits must follow the **Conventional Commits** specification. See [COMMIT_CONVENTION.md](./COMMIT_CONVENTION.md) for full details.
+All commits must follow the **Conventional Commits** specification (v1.0.0).
 
-Examples:
+### Format
+
 ```
-feat: add Audrey AI section
-fix: correct SentraSim step timing
-docs: update README installation steps
-chore: upgrade Next.js to 16.2
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
 ```
+
+### Types
+
+| Type | Description |
+|---|---|
+| `feat` | A new feature |
+| `fix` | A bug fix |
+| `docs` | Documentation only changes |
+| `style` | Changes that do not affect the meaning of the code |
+| `refactor` | A code change that neither fixes a bug nor adds a feature |
+| `perf` | A code change that improves performance |
+| `test` | Adding missing tests or correcting existing tests |
+| `chore` | Changes to the build process, tooling, dependencies, or CI |
+| `revert` | Reverts a previous commit |
+
+### Examples
+
+```
+feat(hero): add animated gradient headline
+fix(sentrasim): correct step 3 async timing bug
+docs: update README with deployment instructions
+chore: upgrade framer-motion to 12.35
+```
+
+### Breaking Changes
+
+Append `!` after the type/scope and include a `BREAKING CHANGE:` footer:
+
+```
+feat(api)!: rename simulation endpoint
+
+BREAKING CHANGE: /api/sim is now /api/v1/sim.
+```
+
+References: [Conventional Commits Specification](https://www.conventionalcommits.org/)
 
 ---
 
@@ -59,14 +109,6 @@ chore: upgrade Next.js to 16.2
 3. Fill in the [pull request template](./.github/PULL_REQUEST_TEMPLATE.md) completely.
 4. Link to any related issues.
 5. Request review from a maintainer.
-
----
-
-## Reporting Issues
-
-Use the [issue templates](./.github/ISSUE_TEMPLATE/) for:
-- [Bug reports](./.github/ISSUE_TEMPLATE/bug_report.md)
-- [Feature requests](./.github/ISSUE_TEMPLATE/feature_request.md)
 
 ---
 
@@ -81,4 +123,28 @@ Use the [issue templates](./.github/ISSUE_TEMPLATE/) for:
 
 ---
 
-_Designed and constructed by Claudesy._
+## Reporting Issues
+
+Use the [issue templates](./.github/ISSUE_TEMPLATE/) for:
+- [Bug reports](./.github/ISSUE_TEMPLATE/bug_report.md)
+- [Feature requests](./.github/ISSUE_TEMPLATE/feature_request.md)
+
+---
+
+## Security Policy
+
+**Please do not report security vulnerabilities through public GitHub issues.**
+
+To report a vulnerability, please open a [GitHub Security Advisory](https://github.com/Claudesy/abyss/security/advisories/new) or email the maintainer directly.
+
+Please include: type of issue, full paths of source files, steps to reproduce, and impact assessment.
+
+We aim to respond within **72 hours**. We follow **responsible disclosure** — once a fix is deployed, we will publish a patch release and credit the reporter.
+
+### Dependency Auditing
+
+```bash
+npm audit --audit-level=moderate
+```
+
+Any `HIGH` or `CRITICAL` findings must be remediated before deployment.

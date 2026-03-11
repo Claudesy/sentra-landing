@@ -28,14 +28,56 @@
 
   /* ── Canvas (elevated surfaces) ── */
   --sentra-canvas: #1C1B1A;
+  --sentra-canvas-dark: #141311;
+  --sentra-panel-1: #111110;
+  --sentra-panel-2: #17160f;
+  --sentra-panel-3: #1c1b17;
 
   /* ── Semantic ── */
   --sentra-critical: #E65A4C;
+  --sentra-critical-rgb: 230 90 76;
   --sentra-warning: #FBBF24;
+  --sentra-warning-rgb: 251 191 36;
+  --sentra-critical-faint: rgb(var(--sentra-critical-rgb) / 0.04);
+  --sentra-critical-border: rgb(var(--sentra-critical-rgb) / 0.2);
+  --sentra-warning-faint: rgb(var(--sentra-warning-rgb) / 0.05);
+  --sentra-warning-soft: rgb(var(--sentra-warning-rgb) / 0.3);
+  --sentra-warning-muted: rgb(var(--sentra-warning-rgb) / 0.7);
+  --sentra-grid-line-strong: rgb(183 171 152 / 0.3);
+  --sentra-neutral-soft: rgb(183 171 152 / 0.04);
+  --sentra-neutral-border: rgb(183 171 152 / 0.1);
+  --sentra-neutral-text: rgb(183 171 152 / 0.6);
 
   /* ── Audrey AI ── */
   --sentra-audrey: #C4956A;
+  --sentra-audrey-muted: #C4956A80;
+  --sentra-audrey-faint: #C4956A15;
+  --sentra-audrey-glow: #C4956A08;
+  --sentra-audrey-bubble: #F2EBE0;
+  --sentra-audrey-bubble-text: #1a1510;
+  --sentra-audrey-rgb: 196 149 106;
+  --sentra-audrey-ambient: rgb(var(--sentra-audrey-rgb) / 0.04);
+  --sentra-audrey-ring-border: rgb(var(--sentra-audrey-rgb) / 0.08);
+  --sentra-audrey-accent-border: rgb(var(--sentra-audrey-rgb) / 0.19);
+  --sentra-audrey-accent-bubble: rgb(var(--sentra-audrey-rgb) / 0.06);
+  --sentra-audrey-accent-bubble-border: rgb(var(--sentra-audrey-rgb) / 0.09);
+  --sentra-audrey-feature-divider: rgb(var(--sentra-audrey-rgb) / 0.08);
+  --sentra-audrey-corner-border: rgb(var(--sentra-audrey-rgb) / 0.07);
+  --sentra-audrey-line: rgb(var(--sentra-audrey-rgb) / 0.31);
+  --sentra-audrey-gradient-line: linear-gradient(
+    to right,
+    rgb(var(--sentra-audrey-rgb) / 0.6),
+    var(--sentra-audrey),
+    rgb(var(--sentra-audrey-rgb) / 0.6)
+  );
   --sentra-audrey-teal: #6B9B8A;
+  --sentra-audrey-teal-faint: #6B9B8A18;
+  --sentra-audrey-teal-rgb: 107 155 138;
+  --sentra-shadow-card: 8px 8px 20px #050505, -8px -8px 20px #1a1a1a, inset 0 1px 0 rgba(255,255,255,0.02);
+  --sentra-shadow-elevated: 6px 6px 16px #050505, -6px -6px 16px #1a1a1a;
+  --sentra-shadow-subtle: 3px 3px 8px #050505, -2px -2px 6px #2a2a2a;
+  --sentra-shadow-accent: 0 0 32px rgba(235, 89, 57, 0.4);
+  --sentra-shadow-accent-strong: 0 0 32px rgba(235, 89, 57, 0.5);
 
   /* ── SentraSim Section ── */
   --sdx-bg-canvas: var(--sentra-canvas);
@@ -53,6 +95,7 @@
 body {
   background: var(--sentra-bg);
   color: var(--sentra-fg);
+  font-size: 19px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -87,5 +130,5 @@ body {
 }
 
 .animate-marquee {
-  animation: marquee 40s linear infinite;
+  animation: marquee 60s linear infinite;
 }

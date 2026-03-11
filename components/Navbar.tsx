@@ -6,13 +6,14 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, ArrowUpRight } from "lucide-react";
 import { SentraKineticNav } from "@/components/ui/sentra-kinetic-nav";
+import { siteLinks } from "@/lib/site-links";
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Audrey", href: "#audrey" },
-  { name: "Insights", href: "#insights" },
+  { name: "Home", href: siteLinks.home },
+  { name: "About", href: siteLinks.about },
+  { name: "Services", href: siteLinks.services },
+  { name: "Audrey", href: siteLinks.audrey },
+  { name: "Insights", href: siteLinks.insights },
 ];
 
 export default function Navbar() {
@@ -48,9 +49,9 @@ export default function Navbar() {
       >
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href={siteLinks.home} className="flex items-center">
             <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-foreground leading-tight font-jakarta">
-              Sentra Healthcare<br />
+              Sentra<span className="text-accent ml-0.5">.</span> Healthcare<br />
               Artificial Intelligence
             </span>
           </Link>
@@ -67,7 +68,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="#contact"
+              href={siteLinks.contact}
               className="group flex items-center gap-1 text-sm font-medium text-muted hover:text-accent transition-all"
             >
               Get Started

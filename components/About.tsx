@@ -5,6 +5,7 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { siteLinks } from "@/lib/site-links";
 
 export default function About() {
   return (
@@ -30,9 +31,6 @@ export default function About() {
             <p>
               Sentra adalah manifestasi dari visi strategis Dr. Ferdi Iskandar&mdash;seorang physician-technologist yang mengintegrasikan Artificial Intelligence sebagai mitra co-engineering sejak fase inisiasi. Platform ini tidak sekadar menggunakan teknologi; ia lahir dari sintesa antara intuisi medis dan kecerdasan komputasional.
             </p>
-            <p>
-              Setiap lapisan fundamental&mdash;mulai dari protokol tata kelola (governance), arsitektur teknis, hingga mandat klinis&mdash;dikonstruksi melalui konvergensi langsung. Kami mempertemukan dua kekuatan utama:
-            </p>
             <ul className="list-none p-0 flex flex-col gap-3">
               <li className="flex gap-3">
                 <span className="text-accent font-bold shrink-0">&bull;</span>
@@ -52,7 +50,7 @@ export default function About() {
           </div>
 
           <Link
-            href="/about"
+            href={siteLinks.about}
             className="flex items-center gap-4 group"
           >
             <div className="w-12 h-12 rounded-full border border-muted flex items-center justify-center text-muted group-hover:border-accent group-hover:text-accent transition-all">

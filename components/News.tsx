@@ -5,6 +5,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { siteLinks } from "@/lib/site-links";
 
 const news = [
   {
@@ -73,7 +74,7 @@ export default function News() {
 
         <div className="mt-16 flex justify-center">
           <Link 
-            href="/insights" 
+            href={siteLinks.insights}
             className="flex items-center gap-4 group"
           >
             <div className="w-12 h-12 rounded-full border border-muted flex items-center justify-center text-muted group-hover:border-accent group-hover:text-accent transition-all">

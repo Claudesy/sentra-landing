@@ -5,6 +5,7 @@ import React from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { InteractiveImageAccordion } from "@/components/ui/interactive-image-accordion";
+import { siteLinks } from "@/lib/site-links";
 
 export default function Showcase() {
   return (
@@ -25,7 +26,7 @@ export default function Showcase() {
             </p>
 
             <Link
-              href="/contact"
+              href={siteLinks.contact}
               className="inline-flex items-center gap-3 mt-8 px-8 py-3 rounded-full bg-accent text-background text-xs font-bold uppercase tracking-wider hover:scale-105 transition-all"
             >
               Hubungi Kami

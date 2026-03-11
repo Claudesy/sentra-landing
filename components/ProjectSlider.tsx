@@ -4,59 +4,56 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
-  "/hero.jpg",
-  "/hero2.jpg",
-  "/hero3.png",
+  { src: "/hero.jpg", alt: "Sentra Clinical Dashboard" },
+  { src: "/hero2.jpg", alt: "Sentra Patient Overview", position: "center 60%" },
+  { src: "/hero3.png", alt: "Sentra Analytics" },
 ];
 
 export default function ProjectSlider() {
-  const [current, setCurrent] = React.useState(0);
-
-  const next = () => setCurrent((current + 1) % images.length);
-  const prev = () => setCurrent((current - 1 + images.length) % images.length);
+  const [active, setActive] = React.useState(0);
 
   return (
-    <section className="py-20 border-b border-muted/20 overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 relative">
-        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
-          <motion.div 
-            className="flex h-full"
-            animate={{ x: `-${current * 100}%` }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+    <section className="py-20 overflow-hidden">
+      <div className="flex gap-4 h-[500px] w-full px-4">
+        {images.map((img, i) => (
+          <motion.div
+            key={i}
+            className="relative rounded-2xl overflow-hidden cursor-pointer"
+            animate={{ flex: i === active ? 3 : 1 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            onClick={() => setActive(i)}
           >
-            {images.map((src, i) => (
-              <div key={i} className="min-w-full h-full relative">
-                <Image 
-                  src={src} 
-                  alt={`Project ${i + 1}`} 
-                  fill 
-                  className="object-cover"
-                  priority={i === 0}
-                  unoptimized
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              className="object-cover"
+              style={img.position ? { objectPosition: img.position } : undefined}
+              priority={i === 0}
+              unoptimized
+            />
+            {/* Overlay on inactive */}
+            <motion.div
+              className="absolute inset-0 bg-background"
+              animate={{ opacity: i === active ? 0 : 0.5 }}
+              transition={{ duration: 0.5 }}
+            />
+            {/* Dot indicators at bottom */}
+            <div className="absolute bottom-5 left-0 right-0 flex justify-center gap-2 z-10">
+              {images.map((_, j) => (
+                <button
+                  key={j}
+                  onClick={(e) => { e.stopPropagation(); setActive(j); }}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    j === active ? "bg-accent w-6" : "bg-foreground/30"
+                  }`}
                 />
-              </div>
-            ))}
+              ))}
+            </div>
           </motion.div>
-
-          {/* Controls */}
-          <div className="absolute bottom-8 right-8 flex gap-4 z-10">
-            <button 
-              onClick={prev}
-              className="w-12 h-12 rounded-full bg-muted/50 backdrop-blur-md flex items-center justify-center text-foreground hover:bg-accent hover:text-background transition-all"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button 
-              onClick={next}
-              className="w-12 h-12 rounded-full bg-muted/50 backdrop-blur-md flex items-center justify-center text-foreground hover:bg-accent hover:text-background transition-all"
-            >
-              <ChevronRight size={24} />
-            </button>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
