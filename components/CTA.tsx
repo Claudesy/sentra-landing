@@ -26,7 +26,7 @@ export default function CTA() {
             Ready to Integrate Clinical Intelligence Into Your Infrastructure?
           </h2>
           <p className="text-lg text-muted max-w-[600px] mx-auto leading-relaxed">
-            From Puskesmas to tertiary hospitals — Sentra's modular architecture adapts to your clinical workflow. Let's architect your deployment.
+            From Puskesmas to tertiary hospitals — Sentra&apos;s modular architecture adapts to your clinical workflow. Let&apos;s architect your deployment.
           </p>
         </div>
 

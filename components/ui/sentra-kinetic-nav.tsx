@@ -27,7 +27,9 @@ export function SentraKineticNav({ isOpen, onClose }: SentraKineticNavProps) {
 
   // Stable onClose reference
   const onCloseRef = useRef(onClose);
-  onCloseRef.current = onClose;
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  }, [onClose]);
 
   // Initial Setup & Hover Effects (run once)
   useEffect(() => {
@@ -91,10 +93,11 @@ export function SentraKineticNav({ isOpen, onClose }: SentraKineticNavProps) {
       });
     }, containerRef);
 
+    const container = containerRef.current;
     return () => {
       ctx.revert();
-      if (containerRef.current) {
-        containerRef.current
+      if (container) {
+        container
           .querySelectorAll("[data-shape]")
           .forEach((item) => {
             const el = item as HTMLElement & { _cleanup?: () => void };
