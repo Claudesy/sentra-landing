@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 export const alt = "Sentra AI — Clinical Decision Support";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -20,8 +19,8 @@ export default function OGImage() {
           fontFamily: "sans-serif",
         }}
       >
-        {/* Top: Logo */}
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+        {/* Logo */}
+        <div style={{ display: "flex" }}>
           <span
             style={{
               fontSize: "13px",
@@ -31,13 +30,11 @@ export default function OGImage() {
               color: "#b7ab98",
             }}
           >
-            SENTRA
-            <span style={{ color: "#eb5939" }}>.</span>
-            {" "}HEALTHCARE AI
+            SENTRA · HEALTHCARE AI
           </span>
         </div>
 
-        {/* Middle: Headline */}
+        {/* Headline */}
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <div
             style={{
@@ -46,26 +43,29 @@ export default function OGImage() {
               color: "#ffffff",
               letterSpacing: "-0.03em",
               lineHeight: 1,
+              display: "flex",
+              flexDirection: "column",
             }}
           >
-            DIAGNOSA.
-            <br />
-            TERAPI. REPEAT.
+            <span>DIAGNOSA.</span>
+            <span>TERAPI. REPEAT.</span>
           </div>
-          <div
-            style={{
-              fontSize: "22px",
-              color: "#b7ab98",
-              maxWidth: "720px",
-              lineHeight: 1.5,
-            }}
-          >
-            AI-powered Clinical Decision Support — mengurangi misdiagnosis 40%
-            untuk layanan kesehatan Indonesia.
+          <div style={{ display: "flex" }}>
+            <span
+              style={{
+                fontSize: "22px",
+                color: "#b7ab98",
+                maxWidth: "720px",
+                lineHeight: 1.5,
+              }}
+            >
+              AI-powered Clinical Decision Support — mengurangi misdiagnosis 40%
+              untuk layanan kesehatan Indonesia.
+            </span>
           </div>
         </div>
 
-        {/* Bottom: Stats row */}
+        {/* Stats */}
         <div
           style={{
             display: "flex",
@@ -74,32 +74,30 @@ export default function OGImage() {
             paddingTop: "32px",
           }}
         >
-          {[
-            { value: "40%", label: "Reduksi Misdiagnosis" },
-            { value: "3×", label: "Keputusan Lebih Cepat" },
-            { value: "97,2%", label: "Akurasi Triase" },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              style={{ display: "flex", flexDirection: "column", gap: "4px" }}
-            >
-              <span
-                style={{
-                  fontSize: "36px",
-                  fontWeight: 900,
-                  color: "#eb5939",
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                {stat.value}
-              </span>
-              <span
-                style={{ fontSize: "14px", color: "#b7ab98", opacity: 0.7 }}
-              >
-                {stat.label}
-              </span>
-            </div>
-          ))}
+          <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            <span style={{ fontSize: "36px", fontWeight: 900, color: "#eb5939" }}>
+              40%
+            </span>
+            <span style={{ fontSize: "14px", color: "#b7ab98" }}>
+              Reduksi Misdiagnosis
+            </span>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            <span style={{ fontSize: "36px", fontWeight: 900, color: "#eb5939" }}>
+              3×
+            </span>
+            <span style={{ fontSize: "14px", color: "#b7ab98" }}>
+              Keputusan Lebih Cepat
+            </span>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            <span style={{ fontSize: "36px", fontWeight: 900, color: "#eb5939" }}>
+              97,2%
+            </span>
+            <span style={{ fontSize: "14px", color: "#b7ab98" }}>
+              Akurasi Triase
+            </span>
+          </div>
         </div>
       </div>
     ),

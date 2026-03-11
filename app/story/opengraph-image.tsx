@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 export const alt = "Our Story — Sentra Healthcare AI";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -20,9 +19,9 @@ export default function OGImage() {
           fontFamily: "sans-serif",
         }}
       >
-        {/* Top: breadcrumb */}
+        {/* Breadcrumb */}
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <span style={{ fontSize: "13px", color: "#b7ab98", opacity: 0.6 }}>
+          <span style={{ fontSize: "13px", color: "#b7ab98" }}>
             SENTRA HEALTHCARE AI
           </span>
           <span style={{ color: "#eb5939", fontSize: "13px" }}>→</span>
@@ -32,54 +31,54 @@ export default function OGImage() {
               fontWeight: 700,
               color: "#eb5939",
               letterSpacing: "0.1em",
-              textTransform: "uppercase",
             }}
           >
             OUR STORY
           </span>
         </div>
 
-        {/* Middle */}
+        {/* Headline */}
         <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
           <div
             style={{
+              display: "flex",
+              flexDirection: "column",
               fontSize: "64px",
               fontWeight: 900,
               color: "#ffffff",
               letterSpacing: "-0.03em",
               lineHeight: 1.05,
-              maxWidth: "900px",
             }}
           >
-            Dibangun oleh Dokter,
-            <br />
-            untuk Dokter.
+            <span>Dibangun oleh Dokter,</span>
+            <span>untuk Dokter.</span>
           </div>
-          <div
-            style={{
-              fontSize: "20px",
-              color: "#b7ab98",
-              maxWidth: "700px",
-              lineHeight: 1.6,
-            }}
-          >
-            Dr. Ferdi Iskandar — 15+ tahun pengalaman klinis, 10+ tahun CEO
-            rumah sakit — membangun Sentra dari nol untuk menyelesaikan krisis
-            keselamatan pasien Indonesia.
+          <div style={{ display: "flex" }}>
+            <span
+              style={{
+                fontSize: "20px",
+                color: "#b7ab98",
+                maxWidth: "700px",
+                lineHeight: 1.6,
+              }}
+            >
+              Dr. Ferdi Iskandar — 15+ tahun pengalaman klinis, 10+ tahun CEO
+              rumah sakit — membangun Sentra untuk menyelesaikan krisis
+              keselamatan pasien Indonesia.
+            </span>
           </div>
         </div>
 
-        {/* Bottom */}
+        {/* Footer */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "16px",
             borderTop: "1px solid rgba(183,171,152,0.15)",
             paddingTop: "32px",
           }}
         >
-          <span style={{ fontSize: "14px", color: "#b7ab98", opacity: 0.5 }}>
+          <span style={{ fontSize: "14px", color: "#b7ab98" }}>
             sentrahai.com/story
           </span>
         </div>

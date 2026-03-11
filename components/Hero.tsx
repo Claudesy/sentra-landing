@@ -305,8 +305,15 @@ export default function Hero() {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="text-[40px] md:text-[80px] lg:text-[100px] leading-[1] font-bold font-jakarta tracking-tighter text-foreground"
               >
-                DIAGNOSA. <br />
-                TERAPI. REPEAT.
+                {/* SEO keyword text — read by Google & screen readers */}
+                <span className="sr-only">
+                  Clinical Decision Support berbasis AI untuk Layanan Kesehatan Indonesia
+                </span>
+                {/* Visual brand tagline — hidden from screen readers */}
+                <span aria-hidden="true">
+                  DIAGNOSA. <br />
+                  TERAPI. REPEAT.
+                </span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}

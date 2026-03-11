@@ -116,32 +116,59 @@ export default async function ArticlePage({ params }: Props) {
       );
     });
 
-  const articleJsonLd = {
+  const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: article.title,
-    description: article.description,
-    datePublished: article.date,
-    author: {
-      "@type": "Person",
-      name: "Dr. Ferdi Iskandar",
-      jobTitle: "Founder & CEO",
-      affiliation: "Sentra Healthcare Solutions",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Sentra Healthcare Solutions",
-      logo: "https://sentrahai.com/icon.png",
-    },
-    url: `https://sentrahai.com/insights/${article.slug}`,
-    mainEntityOfPage: `https://sentrahai.com/insights/${article.slug}`,
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: article.title,
+        description: article.description,
+        datePublished: article.date,
+        author: {
+          "@type": "Person",
+          name: "Dr. Ferdi Iskandar",
+          jobTitle: "Founder & CEO",
+          affiliation: "Sentra Healthcare Solutions",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Sentra Healthcare Solutions",
+          logo: "https://sentrahai.com/icon.png",
+        },
+        url: `https://sentrahai.com/insights/${article.slug}`,
+        mainEntityOfPage: `https://sentrahai.com/insights/${article.slug}`,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://sentrahai.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Insights",
+            item: "https://sentrahai.com/insights",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: article.title,
+            item: `https://sentrahai.com/insights/${article.slug}`,
+          },
+        ],
+      },
+    ],
   };
 
   return (
     <main className="min-h-screen bg-background text-foreground font-sans">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <div className="max-w-[720px] mx-auto px-6 md:px-12 py-32">
