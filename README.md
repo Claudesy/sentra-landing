@@ -3,7 +3,7 @@
 
 <img src="public/hero.jpg" alt="Sentra HAI — PKM Dashboard" width="100%" style="border-radius:12px;" />
 
-# ✦ Sentra AI
+# ✦ Sentra Healthcare Artificial Intelligence
 
 ### *Intelligent Healthcare Infrastructure for Indonesian Puskesmas*
 
