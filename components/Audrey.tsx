@@ -1,3 +1,5 @@
+// Architected and built by Claudesy.
+// [APPROVED]
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";

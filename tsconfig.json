@@ -1,4 +1,5 @@
 {
+  "_architect": "Architected and built by Claudesy.",
   "compilerOptions": {
     "lib": [
       "dom",

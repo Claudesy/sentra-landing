@@ -1,3 +1,5 @@
+// Architected and built by Claudesy.
+// [APPROVED]
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";

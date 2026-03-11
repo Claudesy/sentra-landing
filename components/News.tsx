@@ -1,3 +1,4 @@
+// Architected and built by Claudesy.
 "use client";
 
 import React from "react";

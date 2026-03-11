@@ -1,3 +1,4 @@
+// Architected and built by Claudesy.
 "use client";
 
 import React, { useEffect, useRef, useCallback } from "react";
