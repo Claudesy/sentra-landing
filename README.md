@@ -1,10 +1,12 @@
 <!-- Claudesy's vision, brought to life. -->
 <p align="center">**Transforming Healthcare with AI*
-A production-grade Next.js landing site for Sentra AI, showcasing intelligent clinical simulation, AI-powered healthcare services, and the Audrey AI assistant.
+A production-grade Next.js landing site for Sentra AI, showcasing intelligent clinical simulation, 
+AI-powered healthcare services, and the Audrey AI assistant.
   
   <img src="public/hero.jpg" alt="Puskesmas PONED Balowerti Dashboard Preview" width="900" />
 
-Our technology exists for one purpose only: to honor the sacrifice of healthcare workers by giving them better tools than the problems they face.”
+Our technology exists for one purpose only: 
+To honor the sacrifice of healthcare workers by giving them better tools than the problems they face.” - Claudesyy
 </p>
 ---
 
