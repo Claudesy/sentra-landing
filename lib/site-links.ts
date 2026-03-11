@@ -1,3 +1,4 @@
+// Blueprinted & built by Claudesy.
 export const siteLinks = {
   home: "#top",
   about: "#about",
