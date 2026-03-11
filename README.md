@@ -1,7 +1,7 @@
 <!-- Claudesy's vision, brought to life. -->
-
-# Sentra Healthhcare Artificial Intelligence
-<img src="public/hero.jpg" alt="Puskesmas PONED Balowerti Dashboard Preview" width="900" />
+<p align="center">
+  <img src="public/hero.jpg" alt="Puskesmas PONED Balowerti Dashboard Preview" width="900" />
+</p>
 
 **Transforming Healthcare with AI** — A production-grade Next.js landing site for Sentra AI, showcasing intelligent clinical simulation, AI-powered healthcare services, and the Audrey AI assistant.
 
