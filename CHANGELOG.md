@@ -15,8 +15,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add automated testing framework (Vitest + Playwright)
 - Add OpenTelemetry instrumentation for performance monitoring
 - Add `@next/bundle-analyzer` for bundle size visibility
-- Add CSP headers via `next.config.mjs` security headers
 - Add structured logging (winston or pino)
+
+---
+
+## [1.1.0] — 2026-03-11
+
+### Added
+- `CODE_OF_CONDUCT.md` — contributor conduct standards (Contributor Covenant 2.1)
+- `SECURITY.md` — responsible disclosure policy and vulnerability reporting contact
+- `COMMIT_CONVENTION.md` — Conventional Commits specification with examples
+- `.github/workflows/cd.yml` — environment-gated CD pipeline for production deployments
+- `REVIEW_REPORT.md` — comprehensive audit report (brand, security, 2026 gap analysis)
+- Claudesy brand signatures in `app/globals.css`, `eslint.config.mjs`, `lib/site-links.ts`
+
+### Security
+- `next.config.mjs`: added HSTS (`Strict-Transport-Security: max-age=63072000; includeSubDomains; preload`)
+- `next.config.mjs`: added Content-Security-Policy header (default-src, script-src, img-src, connect-src, frame-ancestors)
+
+### Changed
+- `tsconfig.json`: upgraded `target` from `ES2017` → `ES2022` (2026 baseline)
+- `tsconfig.json`: added `verbatimModuleSyntax: false` (explicit TypeScript 5.x alignment)
 
 ---
 
