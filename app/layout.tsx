@@ -15,8 +15,104 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sentra Artificial intelligence - Transforming Healthcare with AI",
-  description: "Sentra Artificial Intelligence — Transforming Healthcare with AI",
+  metadataBase: new URL("https://sentrahai.com"),
+  title: {
+    default:
+      "Sentra AI — Clinical Decision Support Powered by Artificial Intelligence",
+    template: "%s | Sentra Healthcare AI",
+  },
+  description:
+    "Sentra AI transforms fragmented patient data into real-time diagnostic clarity. AI-powered clinical decision support reducing misdiagnosis by 40% for Indonesian healthcare.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Sentra AI — Clinical Decision Support for Healthcare",
+    description:
+      "AI-powered clinical decision support reducing misdiagnosis by 40%. Built by Indonesian physicians, for Indonesian healthcare.",
+    url: "https://sentrahai.com",
+    siteName: "Sentra Healthcare AI",
+    locale: "id_ID",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sentra AI — Clinical Decision Support for Healthcare",
+    description:
+      "AI-powered clinical decision support reducing misdiagnosis by 40%. Built by Indonesian physicians.",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "MedicalOrganization"],
+      "@id": "https://sentrahai.com/#organization",
+      name: "Sentra Healthcare Solutions",
+      alternateName: "Sentra AI",
+      url: "https://sentrahai.com",
+      logo: "https://sentrahai.com/icon.png",
+      description:
+        "AI-powered Clinical Decision Support transforming healthcare diagnostics in Indonesia. Reducing misdiagnosis by 40% through real-time clinical intelligence.",
+      foundingDate: "2025-03",
+      founder: {
+        "@type": "Person",
+        "@id": "https://sentrahai.com/#founder",
+        name: "Dr. Ferdi Iskandar",
+        jobTitle: "Founder, CEO & Clinical Steward",
+        description:
+          "Licensed physician with 15+ years of clinical experience. Former hospital CEO for 10+ years. Civil law expert specializing in medical malpractice analysis.",
+        sameAs: ["https://linkedin.com/company/sentra-ai"],
+      },
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Laboratorium Technology RSIA Melinda DHAI",
+        addressLocality: "Kediri",
+        addressRegion: "Jawa Timur",
+        addressCountry: "ID",
+      },
+      email: "drferdiiskandar@melinda.co.id",
+      sameAs: [
+        "https://linkedin.com/company/sentra-ai",
+        "https://github.com/sentraai",
+        "https://x.com/sentraai",
+        "https://instagram.com/sentraai",
+      ],
+      knowsAbout: [
+        "Clinical Decision Support",
+        "Healthcare AI",
+        "Medical Diagnostics",
+        "Patient Safety",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sentrahai.com/#website",
+      url: "https://sentrahai.com",
+      name: "Sentra Healthcare AI",
+      publisher: { "@id": "https://sentrahai.com/#organization" },
+      inLanguage: "id-ID",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "Sentra Clinical Decision Support",
+      applicationCategory: "HealthApplication",
+      operatingSystem: "Web",
+      description:
+        "AI-powered diagnostic engine with 7 clinical protocols: NLP synthesis, Bayesian algorithms, trajectory analysis, OCR, pharmaceutical guidance, referral automation, and prognostic modeling.",
+      provider: { "@id": "https://sentrahai.com/#organization" },
+      featureList: [
+        "Real-time Clinical Decision Support",
+        "Audrey AI Voice Assistant",
+        "Clinical Trajectory Analysis",
+        "Prognosis Intelligence",
+        "Patient Risk Scoring",
+        "EMR Integration",
+        "Immutable Audit Trail",
+      ],
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -29,6 +125,10 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} ${inter.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>

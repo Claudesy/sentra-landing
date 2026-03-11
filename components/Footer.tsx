@@ -120,9 +120,9 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-1.5 text-[20px]" style={{ color: "#999" }}>
             <span>&copy; Sentra 2026. All rights reserved</span>
             <span>&middot;</span>
-            <span className="cursor-default hover:underline">Privacy Policy</span>
+            <Link href="/privacy" className="hover:underline transition-colors" style={{ color: "#999" }}>Privacy Policy</Link>
             <span>&middot;</span>
-            <span className="cursor-default hover:underline">Terms of Service</span>
+            <Link href="/terms" className="hover:underline transition-colors" style={{ color: "#999" }}>Terms of Service</Link>
           </div>
 
           {/* Right: Social links */}

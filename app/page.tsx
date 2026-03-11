@@ -12,6 +12,7 @@ import ClinicalTrajectory from "@/components/ClinicalTrajectory";
 import About from "@/components/About";
 import News from "@/components/News";
 import ScrollGallery from "@/components/ScrollGallery";
+import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -30,6 +31,7 @@ export default function Home() {
       <ClinicalTrajectory />
       <News />
       <ScrollGallery />
+      <FAQ />
       <CTA />
       <Footer />
     </main>
