@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     description:
       "AI-powered clinical decision support reducing misdiagnosis by 40%. Built by Indonesian physicians.",
   },
+  verification: {
+    google: "_Ha7v-xuoFfZ-vq7kkYBy5MOO83iO0gWV7uisS89rFs",
+  },
 };
 
 const jsonLd = {
