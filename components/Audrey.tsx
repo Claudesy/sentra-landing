@@ -1,4 +1,4 @@
-// Architected and built by Claudsy.
+// Architected and built by Claudesy.
 // [APPROVED]
 "use client";
 
