@@ -246,12 +246,14 @@ export default function ClinicalPrognosis() {
               <div className="relative" style={{ width: 110, height: 110 }}>
                 <svg viewBox="0 0 140 140" className="w-full h-full">
                   {(() => {
-                    let offset = 0;
-                    return DOUGHNUT_SEGMENTS.map((seg) => {
+                    const offsets = DOUGHNUT_SEGMENTS.reduce<number[]>((acc, seg, i) => {
+                      acc.push(i === 0 ? 0 : acc[i - 1] + (DOUGHNUT_SEGMENTS[i - 1].value / 100) * circumference);
+                      return acc;
+                    }, []);
+                    return DOUGHNUT_SEGMENTS.map((seg, i) => {
                       const len = (seg.value / 100) * circumference;
                       const dash = `${len} ${circumference - len}`;
-                      const dashOff = -offset;
-                      offset += len;
+                      const dashOff = -offsets[i];
                       return (
                         <circle
                           key={seg.label}
