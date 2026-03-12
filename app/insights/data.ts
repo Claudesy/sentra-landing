@@ -129,8 +129,10 @@ Digitalisasi healthcare yang benar bukan hanya soal efisiensi — tapi soal memb
   },
 ];
 
+const articleMap = new Map(articles.map((article) => [article.slug, article]));
+
 export function getArticle(slug: string): Article | undefined {
-  return articles.find((a) => a.slug === slug);
+  return articleMap.get(slug);
 }
 
 export function formatDate(dateStr: string): string {
